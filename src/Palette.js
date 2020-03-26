@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import seedColors from "./seedColors";
+import ColorBox from "./ColorBox";
+import "./Palette.css";
 
 class Palette extends Component {
 	state = {};
 	render() {
+		const colorBoxes = this.props.colors.map((color) => <ColorBox background={color.color} name={color.name} />);
 		return (
 			<div className="Palette">
-				<div className="Palette-colors">
-					<h1>Palette</h1>
-				</div>
+				<div className="Palette-colors">{colorBoxes}</div>
 			</div>
 		);
 	}
